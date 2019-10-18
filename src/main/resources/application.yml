@@ -1,0 +1,35 @@
+##################### 服务器端口号 #####################
+server:
+  port: 9001
+##################### Eureka客户端配置 #####################
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 101.132.152.64
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      #      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://101.132.152.64:8761/eureka/,http://101.132.152.64:8762/eureka/
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/daihongru/freework-config.git
+          username: 18959266963
+          password: Dhr19980903
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 101.132.152.64
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
