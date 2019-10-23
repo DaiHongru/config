@@ -9,8 +9,9 @@ eureka:
     instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
   client:
     service-url:
-      #      defaultZone: http://localhost:8761/eureka/
-      defaultZone: http://101.132.152.64:8761/eureka/,http://101.132.152.64:8762/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://101.132.152.64:8761/eureka/
+      defaultZone: http://47.102.217.234:8761/eureka/
 spring:
   application:
     name: config
@@ -18,14 +19,9 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/daihongru/freework-config.git
-          username: 18959266963
+          uri: https://github.com/DaiHongru/freework.git
+          username: daihr98@foxmail.com
           password: Dhr19980903
-  rabbitmq:
-    username: guest
-    password: guest
-    host: 101.132.152.64
-    port: 5672
 management:
   endpoints:
     web:
